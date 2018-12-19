@@ -9,7 +9,7 @@ public class TV {
     private int channel;
 
 
-    TV(String manufacturer, String model, double price, String owner, boolean on, int channel) {
+    public TV(String manufacturer, String model, double price, String owner, boolean on, int channel) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.price = price;

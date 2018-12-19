@@ -9,7 +9,7 @@ public class Instagram {
     private int likes;
     private int notifications;
 
-    Instagram(String handle, String displayName, int followers, int following, int posts, int likes, int notifications){
+    public Instagram(String handle, String displayName, int followers, int following, int posts, int likes, int notifications){
         this.handle = handle;
         setDisplayName(displayName);
         this.followers = followers;
