@@ -21,6 +21,6 @@ public class Client {
         myTV.turnOff();
         System.out.println(myTV.toString());*/
 
-        
+
     }
 }
