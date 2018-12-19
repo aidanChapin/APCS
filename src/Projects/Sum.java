@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class Sum {
     public static int limit = 25;
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("sum.txt");
+        File file = new File("sum10.txt");
         Scanner fileScanner = new Scanner(file);
+        int totalLines = 0;
         while (fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
             Scanner lineScanner = new Scanner(line);
@@ -23,14 +24,18 @@ public class Sum {
             System.out.print(" = ");
             printArray(num1);
             System.out.println();
+            totalLines++;
         }
+        System.out.println();
+        System.out.println("Total lines = " + totalLines);
     }
     public static int[] add(int[] num1, int[] num2){
         for(int x = limit-1; x > -1; x--){
             int sum = num1[x] + num2[x];
             num1[x] = sum%10;
             if(sum >= 10){
-                num1[x-1] = sum/10;
+                num1[x-1] = num1[x-1] + sum/10;
+                num1[x] = sum%10;
             }
         }
         return num1;
@@ -63,6 +68,6 @@ public class Sum {
         }
         if(start == false){
             System.out.print("0");
-        } 
+        }
     }
 }
