@@ -3,9 +3,12 @@ import java.util.ArrayList;
 import java.util.Random;
 public class MergeSort {
     public static void main(String[] args) {
-
+        ArrayList<Integer> list = createRandomArray(8, 9);
+        printlnArray(list);
+        breakDown(list);
     }
-    public static ArrayList<Integer> breakDown(ArrayList<Integer> list) {
+
+    public static void breakDown(ArrayList<Integer> list) {
         if (list.size() > 1) {
             int midpoint = list.size() / 2;
             ArrayList<Integer> firstHalf = new ArrayList();
@@ -14,12 +17,15 @@ public class MergeSort {
                 list.remove(0);
             }
             if(list.size() == 1 && firstHalf.size() == 1) {
-                buildUp(list, firstHalf);
+                System.out.print("First Half: ");
+                printlnArray(firstHalf);
+                System.out.print("Second Half: ");
+                printlnArray(list);
+                buildUp(firstHalf, list);
             }
             breakDown(firstHalf);
             breakDown(list);
         }
-        return list;
     }
     public static ArrayList<Integer> buildUp(ArrayList<Integer> list1, ArrayList<Integer> list2) {
         ArrayList<Integer> sort = new ArrayList();
@@ -51,6 +57,9 @@ public class MergeSort {
                 list1.remove(0);
             }
         }
+        System.out.print("Sorted Array: ");
+        printlnArray(sort);
+        System.out.println();
         return sort;
     }
     public static void printArray(ArrayList list){
