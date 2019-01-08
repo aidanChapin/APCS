@@ -1,39 +1,74 @@
 package ChristmasBreak;
 
 public class DVDCollection {
-    int size = 1;
+    int size = 10;
     private DVD collection[] = new DVD[size];
 
     @Override
     public String toString() {
-        return("My DVD Collection \n" +
+        return("My DVD Collection \n\n" +
                 "Number of DVDs: " + size +"\n" +
                 "Total Cost: " + totalCost() +"\n" +
-                "Average Cost: " + averageCost() + "\n" +
-                "DVD List: " + "\n" +
+                "Average Cost: " + averageCost() + "\n\n" +
+                "DVD List: " + "\n\n" +
                 listToString());
     }
-
     public void increaseSize(){
         size++;
     }
     public void addDVD(DVD newDVD){
-        collection[0] = newDVD;
+        boolean end = false;
+        int x = -1;
+        while(end == false){
+            x++;
+            if(collection[x] == null){
+                collection[x] = newDVD;
+                end = true;
+            }
+        }
     }
     public double totalCost(){
         double total = 0;
-        for(int x = 0; x < size+1; x++){
-            total += collection[x].getCost();
+        boolean end = false;
+        int x = -1;
+        while(end == false){
+            x++;
+            if(collection[x] != null){
+                total = total + collection[x].getCost();
+            }
+            else{
+                end = true;
+            }
         }
         return total;
     }
     public double averageCost(){
-        return totalCost()/size;
+        double total = 0;
+        boolean end = false;
+        int x = -1;
+        while(end == false){
+            x++;
+            if(collection[x] != null){
+                total = total + collection[x].getCost();
+            }
+            else{
+                end = true;
+            }
+        }
+        return total/x;
     }
     public String listToString(){
         String ret = "";
-        for(int x = 0; x < size+1; x++){
-            ret = ret + collection[x].toString() + "\n";
+        int x = -1;
+        boolean end = false;
+        while(end == false){
+            x++;
+            if(collection[x] != null) {
+                ret = ret + collection[x].toString() + "\n";
+            }
+            else{
+                end = true;
+            }
         }
         return ret;
     }
