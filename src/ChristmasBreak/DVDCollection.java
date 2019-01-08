@@ -8,8 +8,8 @@ public class DVDCollection {
     public String toString() {
         return("My DVD Collection \n\n" +
                 "Number of DVDs: " + size +"\n" +
-                "Total Cost: " + totalCost() +"\n" +
-                "Average Cost: " + averageCost() + "\n\n" +
+                "Total Cost: $" + totalCost() +"\n" +
+                "Average Cost: $" + averageCost() + "\n\n" +
                 "DVD List: " + "\n\n" +
                 listToString());
     }
@@ -40,7 +40,8 @@ public class DVDCollection {
                 end = true;
             }
         }
-        return total;
+        double rounder = Math.round(total*1000);
+        return rounder/1000;
     }
     public double averageCost(){
         double total = 0;
@@ -55,7 +56,8 @@ public class DVDCollection {
                 end = true;
             }
         }
-        return total/x;
+        double rounder = Math.round((total/x)*100);
+        return rounder/100;
     }
     public String listToString(){
         String ret = "";
