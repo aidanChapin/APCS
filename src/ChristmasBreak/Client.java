@@ -4,7 +4,7 @@ public class Client {
     public static void main(String[] args) {
 
 
-        DVD theGodfather = new DVD("The Godfather", "Francis Ford Coppala", 1972, 24.95, true);
+       /* DVD theGodfather = new DVD("The Godfather", "Francis Ford Coppala", 1972, 24.95, true);
         DVD district9 = new DVD("District 9", " Niel Blomkamp", 2009, 19.95, false);
         DVD ironMan = new DVD("Iron Man", "Jon Favreau", 2008, 15.95, false);
         DVD allAboutEve = new DVD("All About Eve", "Joseph Mankiewicz", 1950, 17.50, false);
@@ -24,7 +24,8 @@ public class Client {
         movies.addDVD(ironMan2);
         movies.addDVD(casablanca);
 
-        System.out.println(movies.toString());
+        System.out.println(movies.toString());*/
+        GroceryList list = new GroceryList();
 
     }
 
