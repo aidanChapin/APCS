@@ -1,21 +1,34 @@
 package ChristmasBreak;
 
 public class GroceryItemOrder {
-    private String name;
     private int quantity;
-    private double pricePerUnit;
+    private String name;
+    private double price;
 
-    public GroceryItemOrder(String name, int quantity, double pricePerUnit){
+    public GroceryItemOrder(int quantity, String name, double price){
+        this.quantity = quantity;
         this.name = name;
-        this.quantity = quantity;
-        this.pricePerUnit = pricePerUnit;
+        this.price = price;
     }
 
-    public double getCost(){
-        return pricePerUnit;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuantity(int quantity){
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price*quantity;
+    }
+
+    @Override
+    public String toString() {
+        return quantity + "\t" + name + "\t$" + price + "\n";
     }
 }
